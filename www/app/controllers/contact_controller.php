@@ -1,1 +1,2 @@
-<h1>Hola Mundo desde Contact</h1>
+<?
+require 'app/views/contact/index.php';

@@ -17,7 +17,7 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav ">
-          <li><a href="" title="">01 : Home</a></li>
+          <li><a href="/" title="">01 : Home</a></li>
           <li><a href="blog" title="">02 : Blog</a></li>
           <li><a href="about" title="">03 : About me</a></li>
           <li><a href="contact" title="">04 : Contact</a></li>
