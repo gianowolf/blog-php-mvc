@@ -4,7 +4,6 @@ class Connection{
 
     public static function initDB($config)
     {
- 
         try
         {
             return new PDO(
@@ -14,7 +13,7 @@ class Connection{
             );
         }
         catch(PDOException $e)
-        {
+        {   
             die ($e->getMessage());
         }
     }

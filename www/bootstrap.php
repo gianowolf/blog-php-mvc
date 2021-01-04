@@ -1,6 +1,8 @@
 <?php 
 
-$db_config = require 'config/config.php';
+$app = [];
+
+$app['config'] = require 'config/config.php';
 
 require 'db/QueryBuilder.php';
 require 'db/Connection.php';
@@ -8,7 +10,6 @@ require 'routes/Request.php';
 require 'routes/Router.php';
 
 
-return new QueryBuilder(
-    Connection::initDB($db_config['db'])
+$app['database'] = new QueryBuilder(
+    Connection::initDB($app['config']['database'])
 );
-
