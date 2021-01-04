@@ -16,6 +16,11 @@ $router->get('contact','app/controllers/contact_controller.php');
 //blog
 $router->get('blog','app/controllers/blog_controller.php');
 
+//users
+$router->get('new_user','app/controllers/users_controller.php');
+$router->get('show_user','app/controllers/users_controller.php');
+$router->post('add_user','app/controllers/users_controller.php');
+
 //posts
 $router->get('new_post','app/controllers/posts_controller.php');
 $router->get('show_post','app/controllers/posts_controller.php');
