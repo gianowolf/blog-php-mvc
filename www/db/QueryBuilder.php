@@ -16,6 +16,13 @@ class QueryBuilder{
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function where($table, $where)
+    {
+        $stmt = $this->pdo->prepare("select * from {$table} WHERE {$where}");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function insert($table, $params)
     {
 

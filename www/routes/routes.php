@@ -1,25 +1,21 @@
 <?php
-
-
 /* PORTFOLIO */
-
 //index
-$router->get('/','app/controllers/index_controller.php');
-$router->get("",'app/controllers/index_controller.php');
-$router->get('index','app/controllers/index_controller.php');
-$router->get('home','app/controllers/index_controller.php');
+$router->get('/','IndexController@home');
+$router->get("",'IndexController@home');
+$router->get('index','IndexController@home');
+$router->get('home','IndexController@home');
 //others
-$router->get('about','app/controllers/about_controller.php');
-$router->get('contact','app/controllers/contact_controller.php');
+$router->get('about','IndexController@about');
+$router->get('contact','IndexController@contact');
+$router->get('blog','IndexController@blog');
 
 /* BLOG */
-//blog
-$router->get('blog','app/controllers/blog_controller.php');
-
 //posts
-$router->get('new_post','app/controllers/posts_controller.php');
-$router->get('show_post','app/controllers/posts_controller.php');
-$router->post('add_post','app/controllers/posts_controller.php');
-
+$router->get('new_post','PostsController@new');
+$router->get('show_post','PostsController@show');
+$router->post('add_post','PostsController@add');
+$router->get('edit_post','PostsController@edit');
+$router->post('refresh_post','PostsController@refresh');
 //profile
-$router->get('profile','app/controllers/profile_controller.php');
+// $router->get('profile','app/controllers/profile_controller.php');

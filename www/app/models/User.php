@@ -1,18 +1,10 @@
 <?php 
 
-class Post 
+class User
 {
-    protected $title;
-    protected $subtitle;
-    protected $body; 
-
-    protected $date ;
-    protected $writer;
-
-    protected $theme;
-    protected $tags;
-
-    protected $published;
+    protected $user_type;
+    protected $username;
+    protected $password;
 
     public function __construct($db, $params)
     {
@@ -33,20 +25,7 @@ class Post
                 'image' => $params['image']
             ]
         );
-    }
 
-    public static function getPost($db, $id)
-    {
-        $post = $db->where("posts", "id={$id}");
-        return $post['0'];
-    }
-
-    public static function generateMD($text)
-    {
-        $pd = new Parsedown();
-        $pd->setSafeMode(true);
-        
-        return $pd->text($text);
     }
 
 }
