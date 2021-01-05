@@ -7,7 +7,7 @@ and Docker. This project was a entry point to learn Laravel in next step so __it
 
 The web application MVC design pattern
 
-## Framework Style
+## Framework Interface
 
 The directories and name convention are inspired in Ruby on Rails. Routing inpired in Laravel.
 
