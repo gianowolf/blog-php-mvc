@@ -1,15 +1,8 @@
 <?php 
+require 'vendor/autoload.php';
 
-$app = [];
+App::bind('config', require 'config/config.php');
 
-$app['config'] = require 'config/config.php';
-
-require 'db/QueryBuilder.php';
-require 'db/Connection.php';
-require 'routes/Request.php';
-require 'routes/Router.php';
-require 'app/models/models.php';
-
-$app['database'] = new QueryBuilder(
-    Connection::initDB($app['config']['database'])
-);
+App::bind('database', new QueryBuilder(
+    Connection::initDB(App::get('config')['database'])
+));

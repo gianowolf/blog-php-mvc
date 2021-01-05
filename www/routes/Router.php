@@ -31,14 +31,22 @@ class Router
     
     public function direct($uri, $req_type)
     {
-        if (array_key_exists($uri, $this->routes[$req_type]))
-        {
-            return $this->routes[$req_type][$uri];
+        return $this->callAction(
+            ...explode('@', $this->routes[$req_type][$uri]),
+        );
+    }
+
+    protected function callAction($controller, $action)
+    {
+        $controller = new $controller;
+
+        if (! method_exists($controller, $action) ){
+            throw new Exception(
+                "{$controller} does not respond to the {$action} action."
+            );
         }
-        else 
-        {
-            return 'app/views/statics/404.php';
-        }
+        
+        return $controller->$action();
     }
 
 }

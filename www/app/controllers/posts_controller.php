@@ -1,24 +1,27 @@
 <?php
-
-switch (Request::uri())
+class PostsController
 {
-    case 'new_post':
+    public function new()
+    {
         require 'app/views/post/new.php';
-        break;
+    }
 
-    case 'show_post':
-        $post = Post::getPost($app['database'], $_GET['post']);
+    public function show()
+    {
+        $post = Post::getPost(App::get('database'), $_GET['post']);
         $body = Post::generateMD($post->body);
         require 'app/views/post/show.php';
-    
-        break;
+    }
 
-    
-    case 'add_post':
-            $post = new Post($app['database'], $_POST);
+    public function add()
+    {
+        $post = new Post(App::get('database'), $_POST);
         header('Location: /blog');
-        break;
-        
-    default:
-        break;
+    }
+
+    public function edit()
+    {
+
+    }
 }
+

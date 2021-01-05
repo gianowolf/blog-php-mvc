@@ -9,7 +9,8 @@ require 'app/views/partials/_navbar.php';
 
 <?php
 
-foreach ($posts as $post) {
+foreach ($posts as $post)
+{
     require 'app/views/blog/_post.php';
 }
 
